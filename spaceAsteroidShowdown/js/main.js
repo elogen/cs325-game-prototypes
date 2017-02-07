@@ -196,6 +196,7 @@ window.onload = function() {
             endGame();
         }
     }
+    //called if the player is hit by an enemy bullet
     function hitPlayer(player, enemyShot){
         enemyShot.kill();
         var live = lives.getFirstAlive();
@@ -228,6 +229,7 @@ window.onload = function() {
         gameover = false;
         gameoverText.visible = false;
     }
+    //borrowed from invader phaser example
     function enemyShoot(){
         var enemyShot = enemyShots.getFirstExists(false);
         livingEnemies.length=0;
@@ -242,7 +244,8 @@ window.onload = function() {
             // And fire the bullet from this enemy
             enemyShot.reset(shooter.body.x, shooter.body.y);
             var radians = game.physics.arcade.angleBetween(shooter, player);
-            var degrees = radians * (180/Math.PI);                       game.physics.arcade.velocityFromAngle(degrees, 200, enemyShot.body.velocity);
+            var degrees = radians * (180/Math.PI);           
+            game.physics.arcade.velocityFromAngle(degrees, 200, enemyShot.body.velocity);
             enemyFiringTimer = game.time.now + fireDelay;
         } 
     }
