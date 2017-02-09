@@ -31,9 +31,8 @@ window.onload = function() {
     var fireButton;
     var enemies;
     var nextEnemyAt = 0;
-    var enemyDelay1 = game.rnd.integerInRange(1200, 1600);
-    var enemyDelay2 = game.rnd.integerInRange(800, 1000);
-    var enemyDelay3 = game.rnd.integerInRange(300, 600);
+    var enemyDelay1 = game.rnd.integerInRange(1000, 1100);
+    var enemyDelay2 = game.rnd.integerInRange(200, 400);
     var gameTime = 0;
     var timeText;
     var score = 0;
@@ -43,7 +42,7 @@ window.onload = function() {
     var gameoverText;
     var enemyShots;
     var enemyFiringTimer = 2000;
-    var fireDelay = game.rnd.integerInRange(1000, 2500);
+    var fireDelay = game.rnd.integerInRange(1200, 2500);
     var livingEnemies = [];
     
     function create() {
@@ -150,16 +149,12 @@ window.onload = function() {
             //updates score text
             scoreText.text = 'Score: ' + score;
             //checks if the next enemy can be spawned
+            enemyDelay1 = game.rnd.integerInRange(1000-(gameTime*2),1100-(gameTime*2));
             if (nextEnemyAt < game.time.now &&           enemies.countDead() > 0) {
                 //if the game has lasted for 3 minutes, spawn enemies more often
-                if(gameTime > 180){
-                    nextEnemyAt = game.time.now + enemyDelay3;
-                }
-                //if the game has lasted for 1.5 minutes, spawn enemies more often
-                else if(gameTime > 90){
+                if(gameTime > 350){
                     nextEnemyAt = game.time.now + enemyDelay2;
                 }
-                //spawn enemies at the random rate of enemyDelay1
                 else nextEnemyAt = game.time.now + enemyDelay1;
                 //gets the first enemy that is not alive(on screen) from the enemies group
                 var enemy = enemies.getFirstExists(false);
@@ -245,7 +240,7 @@ window.onload = function() {
             enemyShot.reset(shooter.body.x, shooter.body.y);
             var radians = game.physics.arcade.angleBetween(shooter, player);
             var degrees = radians * (180/Math.PI);           
-            game.physics.arcade.velocityFromAngle(degrees, 200, enemyShot.body.velocity);
+            game.physics.arcade.velocityFromAngle(degrees, game.rnd.integerInRange(150,250), enemyShot.body.velocity);
             enemyFiringTimer = game.time.now + fireDelay;
         } 
     }
