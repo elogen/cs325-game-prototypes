@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Digital Assignment 2</title>
+    <script src="js/phaser.js"></script>
+    <script src="js/main.js"></script>
+
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+
+</head>
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Organ Dodgeball</h2>
+<ul>
+
+<li><strong>Controls:</strong>
+Player One: A/D to move, W to jump, S to pick up organs, and E to throw. The longer E is held the further the organ is thrown
+Player Two: Left/Right arrow keys to move, Up arrow key to jump, Down arrow key to pick up organs, and Right Shift to throw. The longer Shift is held the further the organ is thrown 
+</li>
+    
+<li><strong>High Concept:</strong>
+Face off against your friends in an old fashoin game of dodgeball, just with a medical twist.
+</li>
+
+<li><strong>Theme:</strong>
+The theme I used was organ donor, as you are playing dodgeball with the balls being replaced by organs
+</li>
+
+<li><strong>Mandated Variety:</strong>
+I chose keyboard, deterministic, competitor, and fighting.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+Players will use both quick reactions and perception in order to out maneuver their opponent and get a clean hit with their organ. Players will also manage their throw charge time to make an accurate hit on their opponent. 
+</li>
+
+<li><strong>Gameplay:</strong>
+The main input is mirrored for both players, including movement, jump, organ pick up, and charge throw. The how-to-play is covered in the control section at the top. The overall goal for the player is to get 5 hits on the opponent and win the match. Players can charge up their shots by holding the throw button down longer, but it the throw button is just tapped, the organ will barely go anywhere and end up hitting yourself, scoring a point for your opponent. One mechanic that I wanted to put in, but ultimatly was scrapped for this prototype because I couldn't get it working, was the ability to make a split second reaction and catch an incoming organ without the opponent getting a point.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+The main mechanics that I wanted to look at in the prototype was the charge throw (and catching, though I unfortunatly coudlnt get that to work). Focusing in on players managing their charge so that it wasn't too long, sending the organ flying above the opponents head, or too short, landing on the player and giving the opponent a point. I also wanted to look at the 1v1 mechanic in having two players on a single keyboard.
+</li>
+
+<li><strong>Features:</strong>
+<ul>
+    <li>The unique theme of playing dodgeball with organs</li>
+    <li>The ability to charge up your throws making them faster and travel farther</li>
+    <li>Local VS. allowing for friends to face off using a single computer</li>
+</ul>
+
+
+</li>
+
+<li><strong>Setting/Premise:</strong>
+The game is set in the real world, specifically a average hospital. But one day, two surgeons get into a dispute, and they decide that the only way to settle things is through a game of dodgeball; however, they dont have any balls in the hospital. Their solution, use the organs from organ donors as dodgeballs, and thus the sport of organ dodgeball was born.
+</li>
+
+<li><strong>Story:</strong>
+With Organ Dodgeball being a 1v1 local versus game, their really isn't a story beyond the backstory/premise.
+</li>
+
+<li><strong>Target Audience:</strong>
+The target audience are friends looking for a simple local multiplayer game.
+</li>
+
+<li><strong>Play Time:</strong>
+Though gameplay is dependant on the two players skill levels, a single match take about 2-3 minutes to complete.
+</li>
+
+<li><strong>Strategies:</strong>
+Idealy, strategies would revolve around catching your player off guard by throwing an organ at them when they can't catch (the idea was that players wouldnt be able to catch when holding an organ) however since catching isn't in this prototype, the only strategy is to throw quicker than your opponent, and make sure to not hit yourself with your throws.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+Every asset in the game I made myself using a mix of Photoshop and Aseprite.
+<ul>
+<li>Doctorv1 - player one, has left and right frame</li>
+<li>Doctorv2 - player two, has left and right frame</li>
+<li>Background - single color wall with noise filter applied. Windows added in Aseprite</li>
+<li>Ground - simple 9 pixel black gradient</li>
+<li>donors - made using Aseprite</li>
+<li>eyeball - small pixel eyeball made in Aseprite</li>
+<li>kidney - small pixel kidney made in Aseprite</li>
+<li>heart - small pixel heart made in Aseprite</li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+I didn't really look at other phaser examples when making this game, more so looking at the code I wrote for my previouse game and addapting parts of it to work with this one. There are a few dodgeball-esk game out there. what most came to mind for me when making the game was Dodgeball: A True Underdog Story 2D which is actually a game based off the movie dodgeball. Though it's in a different perspective, the gameplay is quite similar with a charge throw and split second catch ability.
+ 
+</li>
+
+</ul>
+</div>
+</body>
+</html>
