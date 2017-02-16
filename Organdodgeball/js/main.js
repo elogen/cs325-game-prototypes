@@ -92,11 +92,11 @@ window.onload = function() {
         p2WinnerText.visible = false;
         p1ScoreTxt = game.add.text(10, 10, "Player1: " + p1Score, style);
         p2ScoreTxt = game.add.text(game.world.width - 70, 10, "Player2: " + p2Score, style);
+        upKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
+        downKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
     }
     
     function update() {
-        upKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
-        downKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
         var p1HitGround = game.physics.arcade.collide(player1, ground);
         var p2HitGround = game.physics.arcade.collide(player2, ground);
         if(gameOver){
