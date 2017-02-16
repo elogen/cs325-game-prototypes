@@ -79,6 +79,7 @@ window.onload = function() {
         player1.body.collideWorldBounds = true;
         
         player2 = game.add.sprite(game.world.width - 42, game.world.height-75,'doctor');
+        player2.tint = 0x808080;
         game.physics.arcade.enable(player2);
         player2.body.gravity.y = 300;
         player2.body.collideWorldBounds = true;
