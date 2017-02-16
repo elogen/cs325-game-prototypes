@@ -92,8 +92,6 @@ window.onload = function() {
         p2WinnerText.visible = false;
         p1ScoreTxt = game.add.text(10, 10, "Player1: " + p1Score, style);
         p2ScoreTxt = game.add.text(game.world.width - 70, 10, "Player2: " + p2Score, style);
-        upKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
-        downKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
     }
     
     function update() {
@@ -128,7 +126,7 @@ window.onload = function() {
             if (game.input.keyboard.isDown(Phaser.Keyboard.W) && p1HitGround){
                 player1.body.velocity.y += jumpHeight;
             }
-            if (game.input.keyboard.isDown(upKey) && p2HitGround){
+            if (upKey.isDown && p2HitGround){
                 player2.body.velocity.y += jumpHeight;
             }
             if (game.input.keyboard.isDown(Phaser.Keyboard.E)&& p1HasOrgan){
@@ -191,7 +189,7 @@ window.onload = function() {
         }
     }
     function p2Donor(player,donor){
-        if (game.input.keyboard.isDown(downKey) && donor.frame != 1 && !p2HasOrgan){
+        if (downKey.isDown && donor.frame != 1 && !p2HasOrgan){
             donor.frame = 1;
             p2HasOrgan = true;
         }
