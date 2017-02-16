@@ -78,7 +78,7 @@ window.onload = function() {
         player1.body.gravity.y = 300;
         player1.body.collideWorldBounds = true;
         
-        player2 = game.add.sprite(game.world.width - 42, game.world.height-75,'evildoctor');
+        player2 = game.add.sprite(game.world.width - 42, game.world.height-75,'doctor');
         game.physics.arcade.enable(player2);
         player2.body.gravity.y = 300;
         player2.body.collideWorldBounds = true;
