@@ -97,6 +97,8 @@ window.onload = function() {
     }
     
     function update() {
+        upKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.UP);
+        downKey = game.input.keyboard.addKeyCapture(Phaser.Keyboard.DOWN);
         var p1HitGround = game.physics.arcade.collide(player1, ground);
         var p2HitGround = game.physics.arcade.collide(player2, ground);
         if(gameOver){
