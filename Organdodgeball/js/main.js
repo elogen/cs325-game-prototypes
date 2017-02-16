@@ -126,7 +126,7 @@ window.onload = function() {
             if (game.input.keyboard.isDown(Phaser.Keyboard.W) && p1HitGround){
                 player1.body.velocity.y += jumpHeight;
             }
-            if (game.input.keyboard.isDown(Phaser.Keyboard.UP) && p2HitGround){
+            if (game.input.keyboard.isDown(upKey) && p2HitGround){
                 player2.body.velocity.y += jumpHeight;
             }
             if (game.input.keyboard.isDown(Phaser.Keyboard.E)&& p1HasOrgan){
@@ -189,7 +189,7 @@ window.onload = function() {
         }
     }
     function p2Donor(player,donor){
-        if (game.input.keyboard.isDown(Phaser.Keyboard.DOWN) && donor.frame != 1 && !p2HasOrgan){
+        if (game.input.keyboard.isDown(downKey) && donor.frame != 1 && !p2HasOrgan){
             donor.frame = 1;
             p2HasOrgan = true;
         }
