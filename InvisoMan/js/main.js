@@ -26,6 +26,7 @@ window.onload = function() {
     var infoSet;
     var enemies;
     var maxEnemies = 1;
+    var maxInfo = 1;
     var maxSpeed = 100;
     var minSpeed = -100;
     var directionTimer = 0;
@@ -65,7 +66,8 @@ window.onload = function() {
             }
         }
         else{
-            if (infoSet.countLiving()<1){
+            maxInfo = maxEnemies/10;
+            if (infoSet.countLiving()<maxInfo){
                 var info = infoSet.getFirstExists(false);
                 info.reset(game.rnd.integerInRange(0, 780), game.rnd.integerInRange(0, 580));
             }
