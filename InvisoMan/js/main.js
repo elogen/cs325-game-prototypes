@@ -66,7 +66,7 @@ window.onload = function() {
             }
         }
         else{
-            maxInfo = maxEnemies/10;
+            maxInfo = maxEnemies/5+1;
             if (infoSet.countLiving()<maxInfo){
                 var info = infoSet.getFirstExists(false);
                 info.reset(game.rnd.integerInRange(0, 780), game.rnd.integerInRange(0, 580));
