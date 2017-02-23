@@ -148,6 +148,7 @@ window.onload = function() {
         infoSet.callAll('kill');
     }
     function restart(){
+        maxInfo = 1;
         maxEnemies = 1
         score = 0;
         gameOver = false;
