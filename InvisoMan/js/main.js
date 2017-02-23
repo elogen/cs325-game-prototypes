@@ -81,28 +81,28 @@ window.onload = function() {
             if (player.alpha == 0){
                 if (directionTimer<game.time.now){
                     enemies.forEachAlive(function(enemy){
-                        enemy.body.velocity.x = game.rnd.integerInRange(-1,1)*150;
-                        enemy.body.velocity.y = game.rnd.integerInRange(-1,1)*150;
+                        enemy.body.velocity.x = game.rnd.integerInRange(-1,1)*175;
+                        enemy.body.velocity.y = game.rnd.integerInRange(-1,1)*175;
                     });
                 directionTimer = game.time.now + 1000;
                 }
             }
             else{
                 enemies.forEachAlive(function(enemy){
-                    game.physics.arcade.moveToObject(enemy,player, 255);
+                    game.physics.arcade.moveToObject(enemy,player, 250);
                 });
             }
             if(player.body.velocity.x > 0){
-                player.body.velocity.x -=15;
+                player.body.velocity.x -=22.5;
             }
             if(player.body.velocity.x < 0){
-                player.body.velocity.x +=15;
+                player.body.velocity.x +=22.5;
             }
             if(player.body.velocity.y > 0){
-                player.body.velocity.y -=15;
+                player.body.velocity.y -=22.5;
             }
             if(player.body.velocity.y < 0){
-                player.body.velocity.y +=15;
+                player.body.velocity.y +=22.5;
             }
             if (game.input.keyboard.isDown(Phaser.Keyboard.A)){
                 if(Math.abs(player.body.velocity.x)<200){
