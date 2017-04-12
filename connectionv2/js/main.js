@@ -104,6 +104,8 @@ window.onload = function() {
     var cR;
     var cU;
     var cD;
+    var cardNumber = 51;
+    var numTxt;
     
     function create() {
         background = game.add.tileSprite(0, 0, 800, 700, 'background');
@@ -749,9 +751,13 @@ window.onload = function() {
         startSpot.cU = false;
         startSpot.cD = true;
         startSpot.events.onInputDown.add(cardSpot,this);
+        
+        var style = { font: "15px Verdana", fill: "#000", align: "center" };
+        numTxt = game.add.text(game.world.width - 150, 20, "Cards Left: ", style);
     }
     
     function update() {
+        numTxt.text = "Cards Left: " + cardNumber;
     }
     function checkCrash(){
         if (cL.cVal === cR.cVal && cL.black === cR.black){
@@ -832,6 +838,7 @@ window.onload = function() {
                     replaceCard(cardSelected);
                     cardSelected.reset(card.x,card.y);
                     card.kill();
+                    cardNumber --;
                     cardSelected = 0;
                 }
              }
@@ -844,6 +851,7 @@ window.onload = function() {
                 replaceCard(cardSelected);
                 cardSelected.reset(startSpot.x,startSpot.y);
                 startSpot.kill();
+                cardNumber --;
                 cardSelected = 0;
             }
         }
